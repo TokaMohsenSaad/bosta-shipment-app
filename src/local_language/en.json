@@ -1,3 +1,13 @@
 {
-  "title": "Bosta"
+  "title": "Bosta",
+  "menu_bar": {
+    "items": [
+      { "item_name": "Home" },
+      { "item_name": "Prices" },
+      { "item_name": "Sales call" }
+    ],
+    "track": "Track your shipment",
+    "login": "Login",
+    "language": "English"
+  }
 }
