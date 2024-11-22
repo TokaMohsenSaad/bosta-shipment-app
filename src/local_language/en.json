@@ -9,5 +9,40 @@
     "track": "Track your shipment",
     "login": "Login",
     "language": "English"
+  },
+  "shipment_title": {
+    "Tracking_number": "Tracking Number",
+    "Current_status": "Current Status",
+    "provider": "Provider",
+    "promised_date": "Promised Date"
+  },
+
+  "days": {
+    "Saturday": "Saturday",
+    "Sunday": "Sunday",
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday"
+  },
+  "final_status": {
+    "CANCELLED": "Cancelled",
+    "DELIVERED": "Delivered",
+    "DELIVERED_TO_SENDER": "Delivered to Sender"
+  },
+  "month_names": {
+    "January": "January",
+    "February": "February",
+    "March": "March",
+    "April": "April",
+    "May": "May",
+    "June": "June",
+    "July": "July",
+    "August": "August",
+    "September": "September",
+    "October": "October",
+    "November": "November",
+    "December": "December"
   }
 }

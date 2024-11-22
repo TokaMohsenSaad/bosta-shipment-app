@@ -10,5 +10,40 @@
     "track": "تتبع شحنتك",
     "login": "تسجيل الدخول",
     "language": "عربي"
+  },
+  "shipment_title": {
+    "Tracking_number": "رقم الشحنة",
+    "Current_status": "اخر تحديث",
+    "provider": "اسم التاجر",
+    "promised_date": "موعد التسليم خلال"
+  },
+
+  "days": {
+    "Saturday": "السبت",
+    "Sunday": "الاحد",
+    "Monday": "الاثنين",
+    "Tuesday": "الثلاثاء",
+    "Wednesday": "الاربعاء",
+    "Thursday": "الخميس",
+    "Friday": "الجمعة"
+  },
+  "final_status": {
+    "CANCELLED": "تم الغاء الشحنة",
+    "DELIVERED": "تم تسليم الشحنة",
+    "DELIVERED_TO_SENDER": "لم يتم تسليم الشحنة"
+  },
+  "month_names": {
+    "January": "يناير",
+    "February": "فبراير",
+    "March": "مارس",
+    "April": "ابريل",
+    "May": "مايو",
+    "June": "يونيو",
+    "July": "يوليو",
+    "August": "اغسطس",
+    "September": "سبتمبر",
+    "October": "اكتوبر",
+    "November": "نوفمبر",
+    "December": "ديسمبر"
   }
 }

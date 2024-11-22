@@ -1,0 +1,22 @@
+.head {
+  border: rgb(227, 226, 226) 2px solid;
+}
+
+h6 {
+  color: gray;
+}
+
+.reject {
+  color: red;
+  font-weight: bold;
+}
+
+.accept {
+  color: rgb(7, 194, 7);
+  font-weight: bold;
+}
+
+.refused {
+  color: rgb(236, 201, 7);
+  font-weight: bold;
+}

@@ -1,13 +1,16 @@
 import "./App.css";
 import Header from "./components/Header";
-import Com from "./components/Com";
+import Timeline from "./components/Timeline/Timeline";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { TrackingProvider } from "./Context/TrackingContext";
 
 function App() {
   return (
     <div>
-      <Header></Header>
-      <Com></Com>
+      <TrackingProvider>
+        <Header></Header>
+        <Timeline className="mt-5"></Timeline>
+      </TrackingProvider>
     </div>
   );
 }

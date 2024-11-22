@@ -9,6 +9,7 @@ import { Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Bosta from "../images/bosta_en.png";
+import { useTracking } from "../Context/TrackingContext";
 
 const Header = () => {
   const [t, i18l] = useTranslation();
@@ -29,6 +30,13 @@ const Header = () => {
 
   const handleDropdownToggle = (id, isOpen) => {
     setDropdownOpen(isOpen ? id : ""); // Toggle dropdown open state
+  };
+
+  const { setTrackingNumber } = useTracking(); // Access context
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearch = () => {
+    setTrackingNumber(searchInput); // Save to context
   };
 
   return (
@@ -76,8 +84,14 @@ const Header = () => {
                     type="search"
                     className="mx-2 custom-input rounded-start-2 search-bar center"
                     aria-label="Search"
+                    value={searchInput}
+                    onChange={(e) => setSearchInput(e.target.value)}
                   />
-                  <Button variant="btn-sm " className="btn-danger mx-2 center">
+                  <Button
+                    variant="btn-sm "
+                    className="btn-danger mx-2 center"
+                    onClick={handleSearch}
+                  >
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                   </Button>
                 </div>
