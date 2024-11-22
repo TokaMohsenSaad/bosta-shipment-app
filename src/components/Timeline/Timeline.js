@@ -102,42 +102,40 @@ const Timeline = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <div className="container mt-5 head">
-        <div className="row my-4 mx-3">
-          <div className="col-md-6 col-lg-3 ">
-            <h6>
-              {`${t("shipment_title.Tracking_number")}: `}
-              {trackingNumber || " provide a tracking number"}
-            </h6>
+    <div className="container mt-5 head">
+      <div className="row my-4 mx-3">
+        <div className="col-md-6 col-lg-3 ">
+          <h6>
+            {`${t("shipment_title.Tracking_number")}: `}
+            {trackingNumber || "  "}
+          </h6>
 
-            <h5 className={textColor}>{currentStatus}</h5>
-          </div>
-          {/* Render additional data if available */}
-          {data ? (
-            <>
-              <div className="col-md-6 col-lg-3 ">
-                <h6>{t("shipment_title.Current_status")}</h6>
-                <h5>
-                  {nextDay && t(`days.${nextDay}`)} {getFormattedDate(nextDate)}{" "}
-                  {getFormattedTime(nextDate)}
-                </h5>
-              </div>
-              <div className="col-md-6 col-lg-3 ">
-                <h6>{t("shipment_title.provider")}</h6>
-                <h5>{data.provider}</h5>
-              </div>
-              <div className="col-md-6 col-lg-3 ">
-                <h6>{t("shipment_title.promised_date")} </h6>
-                <h5>{promisedDate}</h5>
-              </div>
-            </>
-          ) : (
-            <div className="col-md-6 col-lg-3 ">
-              <h6>No data available</h6>
-            </div>
-          )}
+          <h5 className={textColor}>{currentStatus}</h5>
         </div>
+        {/* Render additional data if available */}
+        {data ? (
+          <>
+            <div className="col-md-6 col-lg-3 ">
+              <h6>{t("shipment_title.Current_status")}</h6>
+              <h5>
+                {nextDay && t(`days.${nextDay}`)} {getFormattedDate(nextDate)}{" "}
+                {getFormattedTime(nextDate)}
+              </h5>
+            </div>
+            <div className="col-md-6 col-lg-3 ">
+              <h6>{t("shipment_title.provider")}</h6>
+              <h5>{data.provider}</h5>
+            </div>
+            <div className="col-md-6 col-lg-3 ">
+              <h6>{t("shipment_title.promised_date")} </h6>
+              <h5>{promisedDate}</h5>
+            </div>
+          </>
+        ) : (
+          <div className="col-md-6 col-lg-3 ">
+            <h6> </h6>
+          </div>
+        )}
       </div>
     </div>
   );
