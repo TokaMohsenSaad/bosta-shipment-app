@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/bosta-shipment-app/static/css/main.31b76566.css",
-    "main.js": "/bosta-shipment-app/static/js/main.428940c3.js",
+    "main.js": "/bosta-shipment-app/static/js/main.c15ba0e5.js",
     "static/media/thinking.png": "/bosta-shipment-app/static/media/thinking.6f1d0757ec6a4c1a34fd.png",
     "index.html": "/bosta-shipment-app/index.html",
     "main.31b76566.css.map": "/bosta-shipment-app/static/css/main.31b76566.css.map",
-    "main.428940c3.js.map": "/bosta-shipment-app/static/js/main.428940c3.js.map"
+    "main.c15ba0e5.js.map": "/bosta-shipment-app/static/js/main.c15ba0e5.js.map"
   },
   "entrypoints": [
     "static/css/main.31b76566.css",
-    "static/js/main.428940c3.js"
+    "static/js/main.c15ba0e5.js"
   ]
 }
