@@ -1,34 +1,46 @@
 import { React, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTruck,
   faBoxOpen,
-  faTimesCircle,
   faCheck,
+  faClipboardList,
+  faTicket,
+  faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 import { ProgressBar } from "react-bootstrap";
 import "./progress.css"; // Ensure you have this file for custom styles
+import { useTracking } from "../../Context/TrackingContext";
+import { fetchShipmentData } from "../../API/api";
+import { useTranslation } from "react-i18next";
 
 const ShipmentProgress = () => {
   const steps = [
-    { icon: faTruck, label: "Shipped" },
+    { icon: faTicket, label: "Shipped" },
     { icon: faBoxOpen, label: "In Transit" },
-    { icon: faTimesCircle, label: "Cancelled" },
-    { icon: faCheck, label: "Completed" },
+    { icon: faTruck, label: "Cancelled" },
+    { icon: faClipboardList, label: "Delivered" },
   ];
+
+  const shipmentProgress = [
+    "TICKET_CREATED",
+    "PACKAGE_RECEIVED",
+    "OUT_FOR_DELIVERY",
+    "DELIVERED",
+  ];
+  const [t, i18l] = useTranslation();
 
   const [currentStep, setCurrentStep] = useState(0); // Start at 0, no circles are active
   const [isRtl, setIsRtl] = useState(document.documentElement.dir === "rtl");
+  const [data, setData] = useState([]);
+  const { trackingNumber } = useTracking();
 
-  // Update RTL direction dynamically when document direction changes
   useEffect(() => {
     const handleDirectionChange = () => {
       const rtl = document.documentElement.dir === "rtl";
       setIsRtl(rtl);
     };
 
-    // Check initially and also set up an observer for changes in the direction
-    handleDirectionChange(); // Initial check
+    handleDirectionChange();
 
     const observer = new MutationObserver(() => {
       handleDirectionChange();
@@ -42,21 +54,58 @@ const ShipmentProgress = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (trackingNumber) {
+      // Reset progress and circles when a new tracking number is entered
+      setCurrentStep(0);
+      setData([]); // Clear the previous data
+      console.log("Progress reset for new tracking number");
+
+      fetchShipmentData(trackingNumber)
+        .then((result) => {
+          const transitEvents = result.TransitEvents || []; // Safely handle undefined
+          setData(transitEvents); // Set state for React
+          console.log("Data has been set");
+
+          // Use transitEvents directly for condition checks
+          if (checkTransitStates(transitEvents, "TICKET_CREATED")) {
+            handleNextStep();
+            if (checkTransitStates(transitEvents, "PACKAGE_RECEIVED")) {
+              handleNextStep();
+              if (checkTransitStates(transitEvents, "OUT_FOR_DELIVERY")) {
+                handleNextStep();
+                if (checkTransitStates(transitEvents, "DELIVERED")) {
+                  handleNextStep();
+                }
+              }
+            }
+          }
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }
+  }, [trackingNumber]);
+
   const handleNextStep = () => {
-    if (currentStep < 3) {
-      setCurrentStep((prev) => prev + 1); // Increment step up to 3 (index 0 to 3)
+    if (currentStep < 4) {
+      setCurrentStep((prev) => prev + 1); // Increment step up to 4 (index 0 to 4)
     }
   };
 
-  // Adjust the order of the steps based on RTL
   const adjustedSteps = isRtl ? steps.reverse() : steps;
-
-  // Calculate the progress based on the current step (each step corresponds to 33.3%)
   const progressValue = Math.min((currentStep / 3) * 100, 100); // Progress bar fills only up to 100%
 
+  const checkTransitStates = (transitEvents, targetState) => {
+    if (!Array.isArray(transitEvents)) {
+      console.error("Invalid input: transitEvents should be an array.");
+      return false;
+    }
+
+    return transitEvents.some((event) => event.state === targetState);
+  };
+
   return (
-    <div className="container text-center progressContain py-4 px-0">
-      <div className="shipment-progress mx-5 justify-content-center">
+    <div className="container text-center progressContain py-4 ">
+      <div className="shipment-progress  justify-content-center">
         <div
           className="progress-container text-center"
           style={{ position: "relative" }}
@@ -77,29 +126,50 @@ const ShipmentProgress = () => {
             style={{ position: "relative", width: "100%" }}
           >
             {adjustedSteps.map((step, index) => {
-              const isActive = currentStep >= index; // Active if currentStep is greater or equal to the index
+              const isActive = currentStep > index; // Active if currentStep is greater than the index
               const circleClass = isActive ? "active" : ""; // Apply 'active' class for filled circles
               const icon = isActive ? faCheck : step.icon; // Change to checkmark if active
 
               return (
+                <>
+                  <div
+                    key={index}
+                    className={`circle ${circleClass}`}
+                    style={{
+                      position: "absolute",
+                      [isRtl ? "right" : "left"]: `${(index * 100) / 3}%`, // Position circles based on RTL
+                      transform: `translateX(-50%) ${
+                        isRtl ? "translateX(30px)" : ""
+                      }`, // Move 30px when RTL
+                    }}
+                  >
+                    <FontAwesomeIcon icon={icon} size="lg" />
+                  </div>
+                </>
+              );
+            })}
+
+            {shipmentProgress.map((item, index) => {
+              return (
                 <div
-                  key={index}
-                  className={`circle ${circleClass}`}
+                  className="d-flex justify-content-center align-items-center m-auto px-2"
                   style={{
+                    marginRight: isRtl ? "0px" : undefined,
+                    paddingRight: isRtl ? "0px" : undefined, // Set padding-right to 0px only when RTL
                     position: "absolute",
                     [isRtl ? "right" : "left"]: `${(index * 100) / 3}%`, // Position circles based on RTL
                     transform: `translateX(-50%) ${
                       isRtl ? "translateX(30px)" : ""
                     }`, // Move 30px when RTL
+                    top: "40px", // Moves the circles downward
                   }}
                 >
-                  <FontAwesomeIcon icon={icon} size="lg" />
+                  <h6>{t(`shipment_progress.${item}`)}</h6>
                 </div>
               );
             })}
           </div>
         </div>
-        <button onClick={handleNextStep}>Next Step</button>
       </div>
     </div>
   );

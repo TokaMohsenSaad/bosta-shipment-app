@@ -16,6 +16,12 @@
     "provider": "Provider",
     "promised_date": "Promised Date"
   },
+  "shipment_progress": {
+    "TICKET_CREATED": "TICKET_CREATED",
+    "PACKAGE_RECEIVED": "PACKAGE_RECEIVED",
+    "OUT_FOR_DELIVERY": "OUT_FOR_DELIVERY",
+    "DELIVERED": "DELIVERED"
+  },
 
   "days": {
     "Saturday": "Saturday",

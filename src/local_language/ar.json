@@ -18,6 +18,13 @@
     "promised_date": "موعد التسليم خلال"
   },
 
+  "shipment_progress": {
+    "TICKET_CREATED": "تم انشاء الشحنة",
+    "PACKAGE_RECEIVED": "تم استلام الشحنة من التاجر",
+    "OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
+    "DELIVERED": "تم التسليم"
+  },
+
   "days": {
     "Saturday": "السبت",
     "Sunday": "الاحد",

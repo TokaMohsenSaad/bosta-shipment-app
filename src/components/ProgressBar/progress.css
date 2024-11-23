@@ -20,8 +20,8 @@
 
 .circles-container {
   position: absolute;
-  top: -20px; /* Adjust the vertical position of the circles */
-  width: 100%; /* Ensure it stretches to fill the progress bar width */
+  top: -20px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   z-index: 2;
@@ -54,4 +54,14 @@
 
 .progressContain {
   border: rgb(227, 226, 226) 2px solid;
+  width: 1500px;
+  height: 140px;
+  /* overflow: wrap; */
+  text-align: center;
+}
+
+.px-2 {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  margin-right: 0px !important;
 }
