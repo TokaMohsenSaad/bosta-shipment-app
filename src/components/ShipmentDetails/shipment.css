@@ -1,0 +1,18 @@
+.address-box {
+  background-color: rgba(255, 251, 251, 0.904); /* Light gray background */
+  padding: 20px; /* Optional padding for spacing */
+  border: rgb(243, 243, 243) 2px solid; /* Gray border */
+  border-radius: 8px; /* Optional for rounded corners */
+}
+
+.image-think {
+  width: 100%;
+  height: 100%;
+}
+
+.address-container {
+  width: 30%;
+}
+.table-content {
+  font-size: 16px;
+}

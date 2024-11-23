@@ -5,6 +5,7 @@ import Timeline from "./components/Timeline/Timeline";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { TrackingProvider } from "./Context/TrackingContext";
 import ShipmentProgress from "./components/ProgressBar/ShipmentProgress";
+import ShipmentDetails from "./components/ShipmentDetails/ShipmentDetails";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header></Header>
         <Timeline></Timeline>
         <ShipmentProgress></ShipmentProgress>
+        <ShipmentDetails></ShipmentDetails>
       </TrackingProvider>
     </div>
   );

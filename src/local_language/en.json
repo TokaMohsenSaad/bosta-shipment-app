@@ -20,7 +20,38 @@
     "TICKET_CREATED": "TICKET_CREATED",
     "PACKAGE_RECEIVED": "PACKAGE_RECEIVED",
     "OUT_FOR_DELIVERY": "OUT_FOR_DELIVERY",
-    "DELIVERED": "DELIVERED"
+    "DELIVERED": "DELIVERED",
+    "IN_TRANSIT": "IN_TRANSIT",
+    "DELIVERY_FAILED": "DELIVERY_FAILED",
+    "NOT_YET_SHIPPED": "NOT_YET_SHIPPED",
+    "DELIVERED_TO_SENDER": "DELIVERED_TO_SENDER",
+    "AVAILABLE_FOR_PICKUP": "AVAILABLE_FOR_PICKUP",
+    "WAITING_FOR_CUSTOMER_ACTION": "WAITING_FOR_CUSTOMER_ACTION",
+    "CANCELLED": "CANCELLED",
+    "Uncovered Zone": "Uncovered Zone",
+    "Cancellation - The customer refuses to give the shipment to the star": "Cancellation - The customer refuses to give the shipment to the star"
+  },
+
+  "address": {
+    "address_head": "Address",
+    "add": "Imbaba, Talaat Harb Street, Workers City, next to Prince, House 17, Block 22",
+    "problem": "Is there a problem in your shipment?!",
+    "button": "Report Problem"
+  },
+
+  "table_head": {
+    "Shipment_Details": "Shipment Details",
+    "Branch": "Branch",
+    "Date": "Date",
+    "Time": "Time",
+    "Details": "Details"
+  },
+
+  "hub": {
+    "Cairo Sorting Facility": "Cairo Sorting Facility",
+    "Beni Suef Hub": "Beni Suef Hub",
+    "FM & Reverse Hub": "FM & Reverse Hub",
+    "El-Mansoura Hub": "El-Mansoura Hub"
   },
 
   "days": {

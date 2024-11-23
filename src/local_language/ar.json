@@ -22,7 +22,37 @@
     "TICKET_CREATED": "تم انشاء الشحنة",
     "PACKAGE_RECEIVED": "تم استلام الشحنة من التاجر",
     "OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
-    "DELIVERED": "تم التسليم"
+    "DELIVERED": "تم التسليم",
+    "IN_TRANSIT": "في مرحلة انتقالية",
+    "DELIVERY_FAILED": "فشل التسليم",
+    "NOT_YET_SHIPPED": "لم يتم شحنها بعد",
+    "DELIVERED_TO_SENDER": "تم تسليمها إلى المرسل",
+    "AVAILABLE_FOR_PICKUP": "متاح للاستلام",
+    "WAITING_FOR_CUSTOMER_ACTION": "في انتظار إجراء العميل",
+    "CANCELLED": "تم الإلغاء",
+    "Cancellation - The customer refuses to give the shipment to the star": "الإلغاء - العميل يرفض تسليم الشحنة ",
+    "Uncovered Zone": "منطقة مكشوفة"
+  },
+
+  "address": {
+    "address_head": "عنوان",
+    "add": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 22",
+    "problem": "هل يوجد مشكلة في شحنتك؟",
+    "button": "ابلاغ عن مشكلة"
+  },
+  "hub": {
+    "Cairo Sorting Facility": "منشأة الفرز بالقاهرة",
+    "Beni Suef Hub": "مركز بني سويف",
+    "FM & Reverse Hub": "FM & Reverse Hub",
+    "El-Mansoura Hub": "مركز المنصورة"
+  },
+
+  "table_head": {
+    "Shipment_Details": "تفاصيل الشحنة",
+    "Branch": "الفرع",
+    "Date": "التاريخ",
+    "Time": "الوقت",
+    "Details": "التفاصيل"
   },
 
   "days": {
