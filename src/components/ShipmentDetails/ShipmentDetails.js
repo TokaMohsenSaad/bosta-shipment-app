@@ -44,7 +44,7 @@ const ShipmentDetails = () => {
         <div className="col-lg-6 w-50">
           <h5>{t("table_head.Shipment_Details")}</h5>
           <Table responsive="sm">
-            <thead className="address-box">
+            <thead className="table-secondary">
               <tr>
                 <th>{t("table_head.Branch")}</th>
                 <th>{t("table_head.Date")}</th>
