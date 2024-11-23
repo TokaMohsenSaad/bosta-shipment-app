@@ -15,6 +15,7 @@ function App() {
         <Timeline></Timeline>
         <ShipmentProgress></ShipmentProgress>
         <ShipmentDetails></ShipmentDetails>
+        <div>Extra</div>
       </TrackingProvider>
     </div>
   );
