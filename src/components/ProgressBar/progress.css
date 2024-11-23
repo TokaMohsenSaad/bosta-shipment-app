@@ -1,11 +1,11 @@
 .shipment-progress {
-  width: 90%; /* Set width to 80% */
-  margin: 0 auto; /* This will center the progress bar horizontally */
+  width: 90%;
+  margin: 0 auto;
 }
 
 .progress-container {
   position: relative;
-  width: 100%; /* Ensure it takes the full width of the parent container */
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -43,8 +43,22 @@
   transform: translateX(-50%);
 }
 
-.circle.active {
-  background-color: #4caf50; /* Green color for completed steps */
+/* .circle.active {
+  background-color: #4caf50;
+  color: white;
+} */
+
+.circle.success {
+  background-color: rgb(7, 194, 7);
+  color: white;
+}
+
+.circle.danger {
+  background-color: red;
+  color: white;
+}
+.circle.warning {
+  background-color: rgb(236, 201, 7);
   color: white;
 }
 
@@ -56,7 +70,7 @@
   border: rgb(227, 226, 226) 2px solid;
   width: 1500px;
   height: 140px;
-  /* overflow: wrap; */
+
   text-align: center;
 }
 
